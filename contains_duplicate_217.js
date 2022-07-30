@@ -1,34 +1,35 @@
 
 /* 
 
-217. Contains Duplicate / Easy
+    217. Contains Duplicate / Easy
 
-Given an integer array nums, return true if any value appears at least twice in the array, 
-and return false if every element is distinct.
+    Given an integer array nums, return true if any value appears at least twice in the array, 
+    and return false if every element is distinct.
 
-Example 1:
-Input: nums = [1,2,3,1]
-Output: true
+    Example 1:
+        Input: nums = [1,2,3,1]
+        Output: true
 
-Example 2:
-Input: nums = [1,2,3,4]
-Output: false
+    Example 2:
+        Input: nums = [1,2,3,4]
+        Output: false
 
-Example 3:
-Input: nums = [1,1,1,3,3,4,3,2,4,2]
-Output: true
- 
+    Example 3:
+        Input: nums = [1,1,1,3,3,4,3,2,4,2]
+        Output: true
+    
 
-Constraints:
-1 <= nums.length <= 105
--109 <= nums[i] <= 109
+    Constraints:
+        1 <= nums.length <= 105
+        -109 <= nums[i] <= 109
 
+*/
 
 
 /*
     SOLUTION 1 SORTING
     PROS - MEMORY 
-    CONS - COMPLEXITY
+    CONS - EVALUATION
     EVALUATION / Memory
         Runtime: 179 ms, faster than 29.86% of JavaScript online submissions for Contains Duplicate.
         Memory Usage: 50.5 MB, less than 73.31% of JavaScript online submissions for Contains Duplicate.
@@ -37,7 +38,7 @@ Constraints:
  * @param {number[]} nums
  * @return {boolean}
  */
-containsDuplicate_sort = function (nums) {
+var containsDuplicate_sort = function (nums) {
     nums.sort((a, b) => a - b)
     for (let index = 0; index < nums.length; ++index) {
         if (nums[index] == nums[index + 1]) {
@@ -49,9 +50,9 @@ containsDuplicate_sort = function (nums) {
 
 /*
     SOLUTION 2 HASHMAP
-    PROS - COMPLEXITY
+    PROS - EVALUATION
     CONS - MEMORY
-    EVALUATION
+    EVALUATION / Memory
         Runtime: 78 ms, faster than 99.00% of JavaScript online submissions for Contains Duplicate.
         Memory Usage: 51.2 MB, less than 35.61% of JavaScript online submissions for Contains Duplicate.
 */
@@ -59,7 +60,7 @@ containsDuplicate_sort = function (nums) {
  * @param {number[]} nums
  * @return {boolean}
  */
-containsDuplicate_hashMap = function (nums) {
+var containsDuplicate_hashMap = function (nums) {
     const nums_length = nums.length
     let l_pointer = 0
     let r_pointer = nums.length - 1
@@ -86,4 +87,4 @@ containsDuplicate_hashMap = function (nums) {
 };
 
 console.log(containsDuplicate_sort([1, 5, -2, -4, 0, 4, -2]));
-console.log(containsDuplicate_hashMap([1, 5, -2, -4, 0, 4, -2]));
+console.log(containsDuplicate_hashMap([1, 2, 3, 1]));
