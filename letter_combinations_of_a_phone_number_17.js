@@ -29,7 +29,6 @@
  * @param {string} digits
  * @return {string[]}
  */
-// [adg, adh, adi]
 var letterCombinations = function (digits) {
     const phone_num_letters = {
         2: ["a", "b", "c"],

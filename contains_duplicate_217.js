@@ -38,7 +38,7 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate_sort = function (nums) {
+var containsDuplicateSort = function (nums) {
     nums.sort((a, b) => a - b)
     for (let index = 0; index < nums.length; ++index) {
         if (nums[index] == nums[index + 1]) {
@@ -60,7 +60,7 @@ var containsDuplicate_sort = function (nums) {
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate_hashMap = function (nums) {
+var containsDuplicateHashMap = function (nums) {
     const nums_length = nums.length
     let l_pointer = 0
     let r_pointer = nums.length - 1
@@ -86,5 +86,5 @@ var containsDuplicate_hashMap = function (nums) {
     return false
 };
 
-console.log(containsDuplicate_sort([1, 5, -2, -4, 0, 4, -2]));
-console.log(containsDuplicate_hashMap([1, 2, 3, 1]));
+console.log(containsDuplicateSort([1, 5, -2, -4, 0, 4, -2]));
+console.log(containsDuplicateHashMap([1, 2, 3, 1]));
