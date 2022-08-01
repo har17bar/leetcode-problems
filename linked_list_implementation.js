@@ -56,6 +56,27 @@ class LinkList {
         return this
     }
 
+    reverse() {
+        let nodes = this.head
+        var previous = null
+        while (nodes) {
+            // save next or you lose it!!!
+            var save = nodes.next
+
+            // reverse pointer
+            nodes.next = previous
+
+            // increment previous to current node
+            previous = nodes
+
+            // increment node to next node or null at end of list
+            nodes = save
+        }
+        this.head = previous
+        this.printList()
+        return this
+    }
+
     printList() {
         const array = []
         let currentNode = this.head
@@ -101,8 +122,8 @@ const singlyLinkList = new LinkList(10)
 singlyLinkList.append(5)
 singlyLinkList.insert(55, 14)
 singlyLinkList.append(16)
-singlyLinkList.remove(4)
 singlyLinkList.prepend(1)
+singlyLinkList.reverse()
 
 
 
